@@ -1,0 +1,159 @@
+i = form1.InputBox1.Text
+m = i
+j = form1.ComboBox1.ListIndex
+Form1.ProgressBar1.Value = (1 - i / m) * 100
+Form1.Label2.Caption = (1 - i / m) * 100
+Hwnd1 = Plugin.Window.Find(0, "ÒõÑôÊ¦-ÍøÒ×ÓÎÏ·")
+Hwnd2 = Plugin.Window.Find(0, "[#] ÒõÑôÊ¦-ÍøÒ×ÓÎÏ· [#]")
+hwndMS1 = Plugin.WndEx7_71.MinimizeSubstitute(hwnd1, 0)
+hwndMS2 = Plugin.WndEx7_71.MinimizeSubstitute(hwnd2, 0)
+Select Case j
+	Case 0
+		Goto Gan1
+	Case 1
+		Goto Gan2
+End Select
+Rem Gan1
+While i <> 0 
+Randomize
+px = int(127 * Rnd)
+py = int(35 * Rnd)
+pa = int(101 * Rnd)
+pb = int(90 * Rnd)
+t = int(2000 * Rnd)
+GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 803, 464 - 31)
+If GetColor = "5EB2F3" then
+	GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 875, 464 - 31)
+	If GetColor = "5EB2F3" then
+		GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 845, 490 - 31)
+		If GetColor = "5EB2F3" then
+			Call Plugin.Bkgnd.LeftClick(Hwnd1, 797 + pb, 459 - 31 + py)
+		End If
+	End If
+Else 
+ 		GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 423, 176 - 31)
+		If GetColor = "10197F" then
+			GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 398, 216 - 31)
+			If GetColor = "111BA1" then
+				GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 446, 218 - 31)
+				If GetColor = "111BA5" Then 
+					Call Plugin.Bkgnd.LeftClick(Hwnd1, 403 + pa, 103 + py - 31)
+					Delay 7000 + t
+					Call Plugin.Bkgnd.LeftClick(Hwnd1, 1134 - pa, 550 - 31 - pb)
+					i = i - 1
+					Form1.ProgressBar1.Value = (1 - i / m) * 100
+					Form1.Label2.Caption = (1 - i / m) * 100
+				End If
+			End If
+		Else 
+				GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 746, 481 - 31)
+				If GetColor = "5A6DDE" then
+					GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 767, 482 - 31)
+					If GetColor = "5C6EDB" then
+						GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 747, 501 - 31)
+						If GetColor = "5C6FDF" Then 
+							Call Plugin.Bkgnd.LeftClick(Hwnd1, 757, 491 - 31)
+							Delay 7000
+							Call Plugin.Bkgnd.LeftClick(Hwnd1, 1134 - pa, 550 - 31 - pb)
+						End If
+					End If
+				End If
+		End If
+End If
+Delay 200
+Wend
+Goto ending
+Rem Gan2
+While i <> 0 
+Randomize
+px = int(127 * Rnd)
+py = int(35 * Rnd)
+pa = int(101 * Rnd)
+pb = int(90 * Rnd)
+t = int(2000 * Rnd)
+GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 863, 555 - 31)
+If GetColor = "5EB2F3" then
+	GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 984, 552 - 31)
+	If GetColor = "5EB2F3" then
+		GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 922, 580 - 31)
+		If GetColor = "5EB2F3" Then 
+			Delay 3000
+			Call Plugin.Bkgnd.LeftClick(Hwnd1, 859 + px, 557 - 31 + py)
+		End If
+	End If
+Else 
+ 	GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd2, 863, 555 - 31)
+	If GetColor = "5EB2F3" then
+		GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd2, 984, 552 - 31)
+		If GetColor = "5EB2F3" then
+			GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd2, 922, 580 - 31)
+			If GetColor = "5EB2F3" Then 
+				Delay 3000
+				Call Plugin.Bkgnd.LeftClick(Hwnd2, 859 + px, 557 - 31 + py)
+			End If
+		End If
+	Else 
+		GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd2, 418, 132 - 31)
+		If GetColor = "10187A" then
+			GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd2, 400, 171 - 31)
+			If GetColor = "111BA5" then
+				GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd2, 451, 166 - 31)
+				If GetColor = "111BA4" Then 
+					Call Plugin.Bkgnd.LeftClick(Hwnd2, 403 + pa, 103 + py - 31)
+					Delay 200
+					Call Plugin.Bkgnd.LeftClick(Hwnd1, 403 + pa, 103 + py -31)
+					Delay 7000 + t
+					Call Plugin.Bkgnd.LeftClick(Hwnd1, 1134 - pa, 550 - 31 - pb)
+					Delay 200
+					Call Plugin.Bkgnd.LeftClick(Hwnd2, 1134 - pa, 550 - 31 - pb)
+					i = i - 1
+					Form1.ProgressBar1.Value = (1 - i / m) * 100
+					Form1.Label2.Caption = (1 - i / m) * 100
+				End If
+			End If
+		Else 
+			GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd2, 746, 481 - 31)
+			If GetColor = "5A6DDE" then
+				GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd2, 767, 482 - 31)
+				If GetColor = "5C6EDB" then
+					GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd2, 747, 501 - 31)
+					If GetColor = "5C6FDF" Then 
+					Call Plugin.Bkgnd.LeftClick(Hwnd2, 757, 491 - 31)
+					Delay 7000
+					Call Plugin.Bkgnd.LeftClick(Hwnd2, 1134 - pa, 550 - 31 - pb)
+					Delay 200
+					Call Plugin.Bkgnd.LeftClick(Hwnd1, 1134 - pa, 550 - 31 - pb)
+					End If
+				End If
+			Else 
+				GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 746, 481 - 31)
+				If GetColor = "5A6DDE" then
+					GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 767, 482 - 31)
+					If GetColor = "5C6EDB" then
+						GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 747, 501 - 31)
+						If GetColor = "5C6FDF" Then 
+						Call Plugin.Bkgnd.LeftClick(Hwnd1, 757, 491 - 31)
+						Delay 7000
+						Call Plugin.Bkgnd.LeftClick(Hwnd1, 1134 - pa, 550 - 31 - pb)
+						Delay 200
+						Call Plugin.Bkgnd.LeftClick(Hwnd2, 1134 - pa, 550 - 31 - pb)
+						End If
+					End If
+				End If
+			End If
+		End If
+	End If
+End If
+Delay 200
+Wend
+Rem ending
+If form1.OptionBox1.Value = 1 Then 
+	dim obj
+	set Obj = createobject("WScript.Shell") 
+	Obj.Run "shutdown /f /s /t 60"
+End If
+Sub OnScriptExit()
+    Call Plugin.WndEx7_71.DestroyMinSub(hwndMS1)
+	Call Plugin.WndEx7_71.DestroyMinSub(hwndMS2)
+End Sub
+
