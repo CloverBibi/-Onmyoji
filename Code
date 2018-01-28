@@ -1,19 +1,19 @@
-i = form1.InputBox1.Text
+i = form1.InputBox1.Text // how many times you want to gan
 m = i
-j = form1.ComboBox1.ListIndex
-Form1.ProgressBar1.Value = (1 - i / m) * 100
-Form1.Label2.Caption = (1 - i / m) * 100
-Hwnd1 = Plugin.Window.Find(0, "阴阳师-网易游戏")
-Hwnd2 = Plugin.Window.Find(0, "[#] 阴阳师-网易游戏 [#]")
-hwndMS1 = Plugin.WndEx7_71.MinimizeSubstitute(hwnd1, 0)
-hwndMS2 = Plugin.WndEx7_71.MinimizeSubstitute(hwnd2, 0)
+j = form1.ComboBox1.ListIndex // single or double(need sandbox)
+Form1.ProgressBar1.Value = (1 - i / m) * 100 // show progress bar
+Form1.Label2.Caption = (1 - i / m) * 100 // show percentage
+Hwnd1 = Plugin.Window.Find(0, "阴阳师-网易游戏") //find window handle
+Hwnd2 = Plugin.Window.Find(0, "[#] 阴阳师-网易游戏 [#]") // find window handle in sandbox if you use the default settings
+hwndMS1 = Plugin.WndEx7_71.MinimizeSubstitute(hwnd1, 0) // for running in the background
+hwndMS2 = Plugin.WndEx7_71.MinimizeSubstitute(hwnd2, 0) // for running in the background
 Select Case j
 	Case 0
-		Goto Gan1
+		Goto Gan1 // single
 	Case 1
-		Goto Gan2
+		Goto Gan2 // double
 End Select
-Rem Gan1
+Rem Gan1 
 While i <> 0 
 Randomize
 px = int(127 * Rnd)
@@ -21,8 +21,8 @@ py = int(35 * Rnd)
 pa = int(101 * Rnd)
 pb = int(90 * Rnd)
 t = int(2000 * Rnd)
-GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 803, 464 - 31)
-If GetColor = "5EB2F3" then
+GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 803, 464 - 31) //easy method to find the starting button
+If GetColor = "5EB2F3" then 
 	GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 875, 464 - 31)
 	If GetColor = "5EB2F3" then
 		GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 845, 490 - 31)
@@ -46,7 +46,7 @@ Else
 				End If
 			End If
 		Else 
-				GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 746, 481 - 31)
+				GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 746, 481 - 31) // for refusing the xuanshangfengyin
 				If GetColor = "5A6DDE" then
 					GetColor = Plugin.Bkgnd.GetPixelColor(Hwnd1, 767, 482 - 31)
 					If GetColor = "5C6EDB" then
@@ -63,7 +63,7 @@ End If
 Delay 200
 Wend
 Goto ending
-Rem Gan2
+Rem Gan2 
 While i <> 0 
 Randomize
 px = int(127 * Rnd)
@@ -147,7 +147,7 @@ End If
 Delay 200
 Wend
 Rem ending
-If form1.OptionBox1.Value = 1 Then 
+If form1.OptionBox1.Value = 1 Then // shutdown when finished
 	dim obj
 	set Obj = createobject("WScript.Shell") 
 	Obj.Run "shutdown /f /s /t 60"
