@@ -3,8 +3,8 @@ m = i
 j = form1.ComboBox1.ListIndex
 Form1.ProgressBar1.Value = (1 - i / m) * 100
 Form1.Label2.Caption = (1 - i / m) * 100
-Hwnd1 = Plugin.Window.Find(0, "ÒõÑôÊ¦-ÍøÒ×ÓÎÏ·")
-Hwnd2 = Plugin.Window.Find(0, "[#] ÒõÑôÊ¦-ÍøÒ×ÓÎÏ· [#]")
+Hwnd1 = Plugin.Window.Find(0, "阴阳师-网易游戏")
+Hwnd2 = Plugin.Window.Find(0, "[#] 阴阳师-网易游戏 [#]")
 hwndMS1 = Plugin.WndEx7_71.MinimizeSubstitute(hwnd1, 0)
 hwndMS2 = Plugin.WndEx7_71.MinimizeSubstitute(hwnd2, 0)
 Select Case j
